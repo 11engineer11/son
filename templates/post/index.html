@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h2>Column 1</h2>
+            {%for post in posts%}
+            {{post.id}}<br />
+            {{post.user}}<br />
+            <a href="{{post.get_absolute_url}}">{{post.title}}</a><br />
+            {{post.content}}<br />
+            {{post.publishing_date}}<br />
+            {%if post.image %}
+            <img src="{{post.image.url}}" class=" img-responsive"<br />
+            {%endif%}
+            <a href="http://127.0.0.1:8000/post/create/">
+                <button type="button" class="btn btn-default">Katıl</button>
+                <button type="button" class="btn btn-default">Detayları ve Katılanlar</button>
+                {%endfor%}
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>Column 2</h2>
+            {% for user in users %}
+            <h3>{{ user.username }}</h3>
+            <button type="button" class="btn btn-default">Arkadası Ekle</button>
+            <button type="button" class="btn btn-default">Butun postlar</button>
+            {%endfor%}
+        </div>
+        <div class="column">
+            <a href="http://127.0.0.1:8000/post/create/">
+                <button type="button" class="btn btn-success">POST OLUŞTUR</button>
+        </div>
+    </div>
+</body>
+</html>

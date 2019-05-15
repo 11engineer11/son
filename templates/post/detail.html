@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    {{posta.id}}<br />
+    {{posta.title}}<br />
+    {{posta.content}}<br />
+    {{posta.user}}<br />
+    {{posta.publishing_date}}<br />
+    
+    {%if posta.image %}
+    <img src="{{posta.image.url}}" class=" img-responsive"<br />
+    {%endif%}<br />
+
+    {%if posta.katilimci %}
+    {%for i in katilimcilar%}
+    {{i}}
+    {%endfor%}
+    {%endif%}<br />
+    <a href="{% url 'post:delete' id=posta.id %}">
+        <button type="button" class="btn btn-success">sil</button>
+    </a>
+    <a href="{% url 'post:update' id=posta.id %}">
+        <button type="button" class="btn btn-success">Güncelle</button>
+    </a>
+
+</body>
+</html>

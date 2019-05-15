@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    Aktif bir hesabınız yok ise 'Kayıt ol' butonunu tıklayınız!
+   
+    <form method='POST' enctype="multipart/form-data">
+        <a href="{% url 'accounts:register'%}">
+            <button type="button" class="btn btn-success">Kayıt Ol</button>
+        </a>
+        <br />
+        {{form.as_p}}
+        {%csrf_token%}
+        <input type="submit" value={{title}} />
+    </form>
+</body>
+</html>
