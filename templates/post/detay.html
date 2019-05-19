@@ -19,15 +19,14 @@
 </style>
 <body>
 
-  
-       
-        
+
+
+
     <div class="w3-container w3-card w3-white w3-round w3-margin">
         <br>
-        <p1 style="color:red">{{posta.user}}</p1><br>
-    
-        <p1 style="color:forestgreen">{{posta.title}}</p1><br>
+        <h1>{{posta.user}}</h1><br>
         {{posta.publishing_date}}<br />
+        {{posta.title}}<br />
         <p1>{{posta.content}}</p1>
 
         {%if posta.image %}
@@ -40,14 +39,9 @@
         <h1 style="color:forestgreen;">{{i}}</h1>
         {%endfor%}
         {%endif%}<br />
-        <a href="{% url 'post:delete' id=posta.id %}">
-            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>SIL</button>
-        </a>
-        <a href="{% url 'post:update' id=posta.id %}">
-            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>GUNCELLE</button>
-        </a>
+       
     </div>
-      
+
 
 </body>
 </html>

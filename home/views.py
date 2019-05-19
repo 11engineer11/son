@@ -19,6 +19,8 @@ def homeview(request):
             }
     form = HomeForm()
     posts = post.objects.all()
+    kisi_post=post.objects.filter(user=request.user)
+    
     try:
         friend = Friend.objects.get(current_user=request.user)
         friends = friend.users.all()
@@ -26,15 +28,14 @@ def homeview(request):
         friends = None
     users = User.objects.exclude(id=request.user.id)
     args = {
-            'form': form, 'posts': posts, 'users': users, 'friends':friends}
+            'form': form, 'posts': posts, 'users': users, 'friends':friends,'kisi_post':kisi_post}
         
    
     return render(request,'home.html',args)
 def katil_post(request,id):
     post1=post.objects.get(id=id)
     post1.katilimci.add(request.user)
-    
-    return HttpResponseRedirect(post1.get_absolute_url())
+    return redirect('home')
 
 def change_friends(request, operation, pk):
     friend = User.objects.get(pk=pk)

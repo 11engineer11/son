@@ -12,6 +12,11 @@ def post_katilim(request):
         'katilimcilar':katilimcilar,
         }
     return render(request,'post/katilim.html',args)
+def post_detay(request,id):
+    posta=post.objects.get(id=id)
+    katilimcilar=posta.katilimci.all()
+    users = User.objects.exclude(id=request.user.id)
+    return render(request,'post/detay.html',{'posta':posta,'users':users,'katilimcilar':katilimcilar})
 def post_detail(request,id):
     
      
@@ -34,7 +39,7 @@ def post_create(request):
         post = form.save(commit=False)
         post.user = request.user
         post.save()
-        return HttpResponseRedirect(post.get_absolute_url())
+        return redirect('home')
    
     context={
         'form':form,
@@ -54,7 +59,7 @@ def post_update(request,id):
         posta = form.save(commit=False)
         posta.user = request.user
         posta.save()
-        return HttpResponseRedirect(posta.get_absolute_url())
+        return redirect('home')
    
     context={
         'form':form,

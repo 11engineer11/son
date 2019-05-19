@@ -17,8 +17,8 @@ class post(models.Model):
          return self.title
      def get_absolute_url(self):
          return reverse('post:detail',kwargs={'id':self.id})
-     def get_absolute_url1(self):
-         return reverse('post:delete',kwargs={'id':self.id})
+     def get_absoluto(self):
+         return reverse('post:detay',kwargs={'id':self.id})
      class Meta:
          ordering=['-publishing_date']
      

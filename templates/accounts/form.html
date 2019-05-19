@@ -1,16 +1,128 @@
-﻿<!DOCTYPE html>
+﻿
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>    
-   
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: 2px solid green;
+        background: #f1f1f1;
+    }
+
+    label {
+        color: #0000cc;
+        font-family: arial, sans-serif;
+    }
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    h2, p {
+        color: #0000cc;
+        font-family: cursive;
+    }
+
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    img {
+        border-style: inset;
+        border-width: medium;
+        border-color: #ffa31a;
+        float: right;
+    }
+
+    button:hover {
+        opacity: 1;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        padding: 14px 20px;
+        background-color: #f44336;
+    }
+
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn, .signupbtn {
+        float: left;
+        width: 50%;
+    }
+
+    /* Add padding to container elements */
+    .container {
+        padding: 10px;
+    }
+
+
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+        .cancelbtn, .signupbtn {
+            width: 100%;
+        }
+    }
+</style>
+<body>
+
     <form method='POST' enctype="multipart/form-data">
-        {{form.as_p}}
-        {%csrf_token%}
-        <input type="submit" value={{title}} />
+
+        <div class="container">
+
+            <img class="img" src="C:\Users\hp_\Downloads\Sosyal_Platform_Projesi\logo.png" width="150" height="100">
+            <h2>Sign Up</h2>
+            <p>Please fill in this form to create an account.</p>
+
+           
+
+            {{form.as_p}}
+            {%csrf_token%}
+            
+    
+
+
+            <div class="clearfix">
+
+                <button type="submit" class="btn btn-success">Kayıt Ol</button>
+
+
+            </div>
+        </div>
     </form>
+
 </body>
 </html>

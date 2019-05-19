@@ -1,21 +1,127 @@
-﻿<!DOCTYPE html>
+﻿
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        h2 {
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        label {
+            color: #0000ff;
+            padding: 8px;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 0 0 0 0;
+            background-color: #4CAF50;
+        }
+
+        img.avatar {
+            height: 150 px;
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid green;
+            border-radius: 4px;
+        }
+
+        .button {
+            width: 100px;
+        }
+
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid green;
+            border-radius: 4px;
+        }
+
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    Aktif bir hesabınız yok ise 'Kayıt ol' butonunu tıklayınız!
+
+
    
-    <form method='POST' enctype="multipart/form-data">
-        <a href="{% url 'accounts:register'%}">
-            <button type="button" class="btn btn-success">Kayıt Ol</button>
-        </a>
-        <br />
-        {{form.as_p}}
-        {%csrf_token%}
-        <input type="submit" value={{title}} />
+            <form method='POST' enctype="multipart/form-data">
+                <a href="{% url 'accounts:register'%}">
+                    <button type="button" class="btn btn-success">Kayıt Ol</button>
+                </a>
+                <br />
+                {{form.as_p}}
+                {%csrf_token%}
+                <button type="submit" class="btn btn-success">GİRİŞ</button> 
+           
     </form>
+
 </body>
 </html>

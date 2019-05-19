@@ -10,6 +10,6 @@
     "\\templates\\accounts",
     "\\templates\\post"
   ],
-  "SelectedNode": "\\home\\models.py",
+  "SelectedNode": "\\templates\\post\\detail.html",
   "PreviewInSolutionExplorer": false
 }
